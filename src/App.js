@@ -43,6 +43,7 @@ function App() {
 						component={Apropos}
 					/>
 					<Route exact path="/" component={Accueil} />
+					<Route exact path="/appcontacts" component={Accueil} />
 					<Route component={Erreur404} />
 				</Switch>
 			</Router>
