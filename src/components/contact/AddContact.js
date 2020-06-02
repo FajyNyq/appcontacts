@@ -49,7 +49,7 @@ export default function AddContact(props) {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="tel">Nom</label>
+						<label htmlFor="tel">N° Téléphone</label>
 						<input
 							type="text"
 							className="form-control form-control-lg"
