@@ -18,10 +18,12 @@ export default function todoReducers(
 			);
 			return { ...state, todos: [...newTodos] };
 		case "DEL_TODO":
-			let restTodos = state.todos.filter(f => f.id !== action.payload.id)
+			const restTodos = state.todos.filter(f => f.id !== action.payload.id)
 			return { ...state, todos: [...restTodos] };
 		case "COMPLETED_TODO":
-			return state;
+			const completeTodos = state.todos.filter(f => (f.completed === true))
+			console.log(completeTodos);
+			return { ...state, todos: [...completeTodos] };
 		default:
 			return state;
 	}

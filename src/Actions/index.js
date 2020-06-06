@@ -47,6 +47,7 @@ export const fTodoDelData = (id) => {
 				"https://jsonplaceholder.typicode.com/todos/" + id,
 			)
 			.then((response) => {
+
 				dispatch({
 					type: "DEL_TODO",
 					payload: {id:id,status:response.status},
