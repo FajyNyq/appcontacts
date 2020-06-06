@@ -3,23 +3,27 @@ import { useSelector } from "react-redux";
 import Contact from "./Contact";
 
 export default function ListeContacts(props) {
-	const contacts = useSelector((state) => state);
+	const { contacts } = useSelector((state) => ({
+		...state.contactReducer,
+	}));
 
+	console.log("list", contacts);
 
 	useEffect(() => {
 		console.log("setItem", contacts);
-		if (contacts !== undefined) {
+	//	if (contacts.length !== 0) {
 			window.localStorage.setItem(
 				"appcontacts",
 				JSON.stringify(contacts)
 			);
-		}
+//		}
 	}, [contacts]);
 
 	return (
 		<div className="container">
-			{contacts !== undefined
-				? contacts.map((contact) => (
+			{
+				//contacts	? 
+			contacts.map((contact) => (
 						<Contact
 							key={contact.id}
 							id={contact.id}
@@ -28,7 +32,8 @@ export default function ListeContacts(props) {
 							tel={contact.tel}
 						/>
 				  ))
-				: null}
+			//	: null
+				}
 			<input
 				type="button"
 				className="btn btn-primary"
